@@ -21,7 +21,7 @@ const createInvoiceController = async (req, res) => {
       }
     ,0);
 
-    const lastInvoice = await Invoice_Master.findOne().sort({ invoiceNo: -1 });
+    const lastInvoice = await Invoice_Master.findOne().sort({ Invoice_no: -1 });
     const invoiceNo = lastInvoice ? lastInvoice.Invoice_no + 1 : 1;
     const newInvoiceMaster = new Invoice_Master({
       Invoice_no: invoiceNo,
